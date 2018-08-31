@@ -3,7 +3,7 @@
 
 set.seed(123)
 
-plot_sample_rho <- function(numberobs, phi1, phi2){
+plot_sample_rho <- function(numberobs, rho1, rho2){
   require(latex2exp)
   require(exuber)
   
@@ -13,8 +13,8 @@ plot_sample_rho <- function(numberobs, phi1, phi2){
   ae <- sim_dgp1(numberobs)
   
   for(t in 3:numberobs) {
-    Z1[t] <- phi1*Z1[t-1]+e[t]
-    Z2[t] <- phi2*Z2[t-1]+e[t]
+    Z1[t] <- rho1*Z1[t-1]+e[t]
+    Z2[t] <- rho2*Z2[t-1]+e[t]
   }
   Z11 <- Z1[1:numberobs]
   Z22 <- Z2[1:numberobs]
@@ -32,5 +32,7 @@ plot_sample_rho <- function(numberobs, phi1, phi2){
   }
 
 #layout(matrix(c(1,1,2,3),2,2,byrow=TRUE))
+
+# plot different rhos - rho1 = 1.00 (represents i.e. a random walk), rho2=0.4 (represents a stationary process, i.e. price returns):
 plot_sample_rho(200, 1.00, 0.40)
 
