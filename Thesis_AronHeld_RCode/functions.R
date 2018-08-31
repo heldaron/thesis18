@@ -13,7 +13,7 @@ load_data <- function(path){
   require(xts)
   ## 
   
-  print(paste(path,"btc.csv",sep = ""))
+  print("Dataset loaded!")
   BTC <- read.csv(paste(path,"new_btc.csv",sep=""),sep=";",dec=",")
   ?Date
   dates <- as.Date(BTC[,1],format="%d/%m/%Y")
