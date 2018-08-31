@@ -1,0 +1,9 @@
+Name of Quantlet : Thesis_AronHeld_RCode
+
+Published in : Cryptocurrency Market, A Bubble? - A Unit Root Approach (Aron Held - Thesis)
+
+Description : 'Contains a main file with all created function used for the study for answering thesis question. Please regard README.md for further information.'
+
+Keywords : cryptocurrencies, unit root tests, bubbles, Granger causality
+
+Author : Aron Felix Held
