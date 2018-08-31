@@ -43,13 +43,13 @@ load_data <- function(path){
   
   
 
-  XRM <- read.csv(paste(path,"new_xrm.csv",sep = ""),sep=";",dec=",")
+  XLM <- read.csv(paste(path,"new_xlm.csv",sep = ""),sep=";",dec=",")
   
-  dates <- as.Date(XRM[,1],format="%d/%m/%Y")
-  XRM <- xts(XRM['Close..'],order.by = dates)
+  dates <- as.Date(XLM[,1],format="%d/%m/%Y")
+  XLM <- xts(XLM['Close..'],order.by = dates)
   
   
-  DATA <- merge.xts(BTC,LTC,ETH,DASH,XRP,XRM)
+  DATA <- merge.xts(BTC,LTC,ETH,DASH,XRP,XLM)
   colnames(DATA) <- c("BTC","LTC","ETH","DASH","XRP","XRM")
   
   return(DATA)
@@ -305,7 +305,7 @@ granger_causality_bivariate <- function(DATA,lags,logs=0){
 
 
 ############ end #################
-#down below not used function for thesis but taken into consideration..
+#down below not used functions for thesis but taken into consideration..
 
 get_price_plots <- function(DATA){
   #Function to create a price plot of set of cryptos 
