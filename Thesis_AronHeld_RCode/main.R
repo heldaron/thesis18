@@ -1,9 +1,9 @@
-source("Thesis_AronHeld_RCode/function.R")
+source("Thesis_AronHeld_RCode/functions.R")
 
 ##### MAIN
 #########################
 ### LOAD DATA
-path_directory = "/data/"
+path_directory = paste(getwd(),"/data/",sep="")
 
 installpackages()
 
